@@ -36,10 +36,10 @@
     <hr>
 <table class="table table-striped">
   <thead>
-    <th>姓</th>
-    <th>名</th>
-    <th>電子メール</th>
-    <th>所属会社</th>
+    <th><%= sort_link(@q, :family_name, "姓") %></th>
+    <th><%= sort_link(@q, :given_name, "名") %></th>
+    <th><%= sort_link(@q, :mail, "電子メール") %></th>
+    <th><%= sort_link(@q, :company_name, "所属会社") %></th>
     <th>リンク</th>
   </thead>
   <tbody>
