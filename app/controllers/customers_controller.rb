@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  before_action :set_customer, only: [:show, :edit, :update, :destroy]
   def index
     @customers = Customer.page(params[:page])
   end
@@ -18,11 +19,11 @@ class CustomersController < ApplicationController
     end
   end
   def edit
-    @customer = Customer.find(params[:id])
+    # @customer = Customer.find(params[:id])
   end
 
   def update
-    @customer = Customer.find(params[:id])
+    # @customer = Customer.find(params[:id])
     @customer.update_attributes(customer_params)
     # @customer.save
     # redirect_to "/customers/#{@customer.id}"
@@ -34,15 +35,18 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customer = Customer.find(params[:id])
+    # @customer = Customer.find(params[:id])
   end
 
   def destroy
-    @customer = Customer.find(params[:id])
+    # @customer = Customer.find(params[:id])
     @customer.destroy
     redirect_to customers_url
   end
 private
+  def set_customer
+    @customer = Customer.find(params[:id])
+  end
   def customer_params
     params.require(:customer).permit(
       :family_name,
