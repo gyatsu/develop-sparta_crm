@@ -19,6 +19,11 @@
     <%= f.text_field :given_name, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :company_id %><br>
+    <%= f.collection_select(:company_id, Company.all, :id, :name , class: "form-control") %>
+  </div>
+  </div>
+  <div class="form-group">
     <%= f.label :mail %><br>
     <%= f.text_field :mail, class: "form-control" %>
   </div>
