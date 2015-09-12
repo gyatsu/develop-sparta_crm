@@ -8,10 +8,14 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
-    @customer.save
-    redirect_to "/customers/#{@customer.id}"
+    # @customer.save
+    # redirect_to "/customers/#{@customer.id}"
+    if @customer.save
+      redirect_to @customer
+    else
+      render :new
+    end
   end
-
   def edit
   end
 
