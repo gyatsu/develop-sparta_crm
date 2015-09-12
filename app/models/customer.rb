@@ -17,6 +17,8 @@
 #
 
 class Customer < ActiveRecord::Base
+
+  scope :company_order, -> { order(:company_id)}
   validates :family_name,
     presence: true, length: { maximum: 20 }
   validates :given_name,
