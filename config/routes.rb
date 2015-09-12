@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :customers
   root 'customers#index'
+  resources :customers
+
+  devise_for :users
   # get 'customers/index'
 
   # get 'customers/new'
