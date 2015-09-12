@@ -7,6 +7,9 @@ class CustomersController < ApplicationController
   end
 
   def create
+    @customer = Customer.new
+    @customer.save
+    redirect_to "/cutomser/#{coutomer.id}"
   end
 
   def edit
