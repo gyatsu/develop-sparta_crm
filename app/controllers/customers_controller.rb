@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   def index
+    @customers = Customer.all
   end
 
   def new
@@ -38,7 +39,7 @@ class CustomersController < ApplicationController
 
   def destroy
     @customer = Customer.find(params[:id])
-    @custoemr.destroy
+    @customer.destroy
     redirect_to customers_url
   end
 private
