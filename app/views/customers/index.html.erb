@@ -1,5 +1,10 @@
 <h1>顧客情報一覧</h1>
 <p>お客様情報が表示されます。</p>
+<%= search_form_for @q do |f| %>
+<%= f.label :family_name_cont, '姓' %>
+<%= f.search_field :family_name_cont %>
+<%= f.submit %>
+<% end %>
 <table class="table table-striped">
   <thead>
     <th>姓</th>
