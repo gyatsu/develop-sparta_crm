@@ -7,6 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+# 100.times do |index|
+#   Customer.create(family_name: "谷津#{index}", given_name: "弘仁#{index}", mail: "yatsu#{index}@yatsu.com")
+# end
+
 100.times do |index|
-  Customer.create(family_name: "谷津#{index}", given_name: "弘仁#{index}", mail: "yatsu#{index}@yatsu.com")
+  Customer.create(
+    family_name: Faker::Japanese::Name.last_name,
+    given_name: Faker::Japanese::Name.first_name,
+    mail: "test#{index}@test.com"
+    )
 end
