@@ -1,9 +1,9 @@
 class CreateCustomers < ActiveRecord::Migration
   def change
     create_table :customers do |t|
-      t.string :family_name, null: false
-      t.string :given_name, null: false
-      t.string :mail, null: false
+      t.string :family_name
+      t.string :given_name
+      t.string :mail
 
       t.timestamps null: false
     end
