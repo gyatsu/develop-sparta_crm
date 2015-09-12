@@ -1,10 +1,39 @@
 <h1>顧客情報一覧</h1>
 <p>お客様情報が表示されます。</p>
 <%= search_form_for @q do |f| %>
-<%= f.label :family_name_cont, '姓' %>
-<%= f.search_field :family_name_cont %>
-<%= f.submit %>
-<% end %>
+      <div class="row">
+        <div class="col-sm-3 col-xs-12">
+          <div class="form-group">
+            <%= f.label :family_name_cont, '姓' %>
+            <%= f.search_field :family_name_cont, class: "form-control input-sm" %>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+          <div class="form-group">
+            <%= f.label :given_name_cont, '名' %>
+            <%= f.search_field :given_name_cont, class: "form-control input-sm" %>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+          <div class="form-group">
+            <%= f.label :mail_cont, '電子メール' %>
+            <%= f.search_field :mail_cont, class: "form-control input-sm" %>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+          <div class="form-group">
+            <%= f.label :company_name_cont, '会社名' %>
+            <%= f.search_field :company_name_cont, class: "form-control input-sm" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <%= f.submit "検索", class: "btn btn-default" %>
+        </div>
+      </div>
+    <% end -%>
+    <hr>
 <table class="table table-striped">
   <thead>
     <th>姓</th>
