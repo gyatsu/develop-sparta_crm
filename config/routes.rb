@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  root 'customers#index'
-  resources :customers
-
   devise_for :users
+  resources :customers
+  post '/comments' => 'comments#create'
+  root 'customers#index'
+
+
+
   # get 'customers/index'
 
   # get 'customers/new'
