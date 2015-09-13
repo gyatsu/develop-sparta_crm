@@ -1,5 +1,7 @@
 <h1>顧客情報一覧</h1>
 <p>お客様情報が表示されます。</p>
+<p><%= current_user.id %></p>
+<p><%= current_user.email %></p>
 <%= search_form_for @q do |f| %>
       <div class="row">
         <div class="col-sm-3 col-xs-12">
