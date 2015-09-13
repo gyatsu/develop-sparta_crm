@@ -29,6 +29,7 @@ class Customer < ActiveRecord::Base
   validates :company_id, presence: true
 
   belongs_to :company
+  has_many :comments
 
   def full_name(keisho)
     full_name = family_name + given_name + keisho
