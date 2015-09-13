@@ -13,8 +13,15 @@
 <hr>
 <div class="row">
   <div class="col-lg-12">
-    <% @customer.comments.each do |f| %>
-    <p><%= f.body %></p>
+    <% @customer.comments.each do |comment| %>
+      <div class="media">
+        <div class="media-body">
+          <p><%= simple_format(comment.body) %></p>
+          <p class="text-muted">
+            投稿日時：<%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+          </p>
+        </div>
+      </div>
     <% end %>
 
   </div>
